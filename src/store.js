@@ -1,21 +1,27 @@
-import { createStore } from 'redux';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     isLoggedIn: false,
     mobileMenuOpen: false
 };
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'LOGIN':
-            return { ...state, isLoggedIn: true };
-        case 'TOGGLE_MOBILE_MENU':
-            return { ...state, mobileMenuOpen: !state.mobileMenuOpen };
-        default:
-            return state;
+const appSlice = createSlice({
+    name: 'app',
+    initialState,
+    reducers: {
+        login(state) {
+            state.isLoggedIn = true;
+        },
+        toggleMobileMenu(state) {
+            state.mobileMenuOpen = !state.mobileMenuOpen;
+        }
     }
-};
+});
 
-const store = createStore(reducer);
+export const { login, toggleMobileMenu } = appSlice.actions;
+
+const store = configureStore({
+    reducer: appSlice.reducer
+});
 
 export default store;
