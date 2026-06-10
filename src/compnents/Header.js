@@ -34,13 +34,14 @@ function Header() {
         <header>
             <div className="container header-inner">
                 <div className="logo">
-                    {/* Using the new SVG logo - clean, scalable, and matches the Design System perfectly */}
+                    {/* Using the new transparent PNG logo from the logos folder */}
                     <img 
-                        src="/suncon-logo.svg" 
+                        src="/images/logos/suncon-logo.png" 
                         alt="SunCon Investments & Development Ltd Logo" 
                         style={{ 
                             height: '48px', 
-                            width: '48px', 
+                            width: 'auto',
+                            maxWidth: '48px',
                             filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.35))' 
                         }} 
                     />
