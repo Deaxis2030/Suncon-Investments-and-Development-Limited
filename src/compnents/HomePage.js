@@ -9,7 +9,7 @@ import ContactSection from './ContactSection';
 function HomePage() {
     console.log('Rendering HomePage');
     return (
-        <div id="home-page" className="container mx-auto px-6">
+        <div id="home-page" className="container">
             <HeroSection />
             <ProjectsSection />
             <AboutSection />

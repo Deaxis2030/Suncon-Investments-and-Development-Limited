@@ -15,8 +15,8 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="container mx-auto px-4 py-8">
-          <h1 className="text-2xl font-bold text-red-600">
+        <div className="container error-boundary">
+          <h1>
             Something went wrong.
           </h1>
           <p>{this.state.error?.message || "Unknown error"}</p>
@@ -28,15 +28,17 @@ class ErrorBoundary extends Component {
 }
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const showLoginModal = useSelector((state) => state.showLoginModal);
 
   return (
     <ErrorBoundary>
       <Header />
-      <main className="flex-grow pt-20 pb-16">
-        {isLoggedIn ? <HomePage /> : <LoginPage />}
+      <main>
+        <HomePage />
       </main>
       <Footer />
+
+      {showLoginModal && <LoginPage />}
     </ErrorBoundary>
   );
 }

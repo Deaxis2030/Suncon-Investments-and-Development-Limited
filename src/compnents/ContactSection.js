@@ -2,43 +2,41 @@ import React from 'react';
 
 function ContactSection() {
     return (
-        <section id="contact" className="mb-16">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-blue-800 mb-4">Get in Touch</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">We'd love to hear from you. Contact us today!</p>
+        <section id="contact">
+            <div className="section-header">
+                <h2 className="section-title">Get in Touch</h2>
+                <p className="section-subtitle">We'd love to hear from you. Contact us today!</p>
             </div>
-            <div className="bg-white rounded-xl card-shadow p-8 max-w-2xl mx-auto">
-                <div className="space-y-6">
-                    <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+            <div className="card" style={{ maxWidth: '42rem', margin: '0 auto' }}>
+                <div>
+                    <div className="form-group">
+                        <label htmlFor="name" className="form-label">Name</label>
                         <input
                             id="name"
                             type="text"
-                            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="form-input"
                             placeholder="Your name"
                         />
                     </div>
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                    <div className="form-group">
+                        <label htmlFor="email" className="form-label">Email</label>
                         <input
                             id="email"
                             type="email"
-                            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="form-input"
                             placeholder="Your email"
                         />
                     </div>
-                    <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                    <div className="form-group">
+                        <label htmlFor="message" className="form-label">Message</label>
                         <textarea
                             id="message"
                             rows="4"
-                            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                            className="form-textarea"
                             placeholder="Your message"
                         ></textarea>
                     </div>
-                    <button
-                        className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-all"
-                    >
+                    <button className="btn btn-primary btn-block">
                         Send Message
                     </button>
                 </div>

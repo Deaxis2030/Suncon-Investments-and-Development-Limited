@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../store';
+import { login, closeLoginModal } from '../store';
 
 function LoginPage() {
     const dispatch = useDispatch();
@@ -16,6 +16,7 @@ function LoginPage() {
             setDoorState('door-open');
             setTimeout(() => {
                 dispatch(login());
+                dispatch(closeLoginModal());
             }, 1500); // Match animation duration
         } else {
             setError('Please enter both email and password');
@@ -28,48 +29,68 @@ function LoginPage() {
     };
 
     return (
-        <div className={`welcome-screen fixed inset-0 z-50 flex items-center justify-center bg-gray-900 transition-opacity duration-1000 ${doorState === 'door-open' ? 'hidden' : ''}`}>
-            <div className="door-container relative w-full max-w-2xl h-96 mx-auto">
-                <div className={`door absolute top-0 left-0 w-full h-full rounded-r-lg transition-transform duration-1500 ${doorState}`}>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-white">
-                        <h1 className="text-4xl font-bold mb-4">Welcome to Suncon</h1>
+        <div className={`welcome-screen ${doorState === 'door-open' ? 'hidden' : ''}`}>
+            <div className="door-container">
+                <div className={`door ${doorState}`}>
+                    <div className="door-content">
+                        <button
+                            type="button"
+                            onClick={() => dispatch(closeLoginModal())}
+                            aria-label="Close members sign in"
+                            style={{
+                                position: 'absolute',
+                                top: '16px',
+                                right: '16px',
+                                background: 'rgba(255,255,255,0.15)',
+                                border: 'none',
+                                color: 'white',
+                                fontSize: '1.5rem',
+                                width: '32px',
+                                height: '32px',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                lineHeight: '1',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                        >
+                            ×
+                        </button>
+                        <h1 className="text-xl font-bold mb-4" style={{ fontSize: '2rem' }}>Welcome to Suncon</h1>
                         <p className="text-xl mb-8 text-center">Your premium housing solutions provider</p>
-                        <div className="w-full max-w-xs">
-                            <div className="keypad rounded-lg p-6 shadow-lg">
-                                <div className="text-center mb-6">
-                                    <i className="fas fa-lock text-3xl mb-2"></i>
-                                    <p className="text-sm">Enter access code</p>
-                                </div>
-                                <form onSubmit={handleLogin}>
-                                    <div className="mb-4">
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            placeholder="Email"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            className="w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                                        />
-                                    </div>
-                                    <div className="mb-6">
-                                        <input
-                                            type="password"
-                                            id="password"
-                                            placeholder="Password"
-                                            value={password}
-                                            onChange={(e) => setPassword(e.target.value)}
-                                            className="w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                                        />
-                                    </div>
-                                    {error && <p className="text-red-400 text-sm mb-4 text-center">{error}</p>}
-                                    <button
-                                        type="submit"
-                                        className="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition duration-300"
-                                    >
-                                        Unlock
-                                    </button>
-                                </form>
+                        <div className="keypad">
+                            <div className="text-center mb-6">
+                                <i className="fas fa-lock" style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}></i>
+                                <p className="text-sm">Enter access code</p>
                             </div>
+                            <form onSubmit={handleLogin}>
+                                <div className="mb-4">
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="Email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </div>
+                                <div className="mb-6">
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        placeholder="Password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                </div>
+                                {error && <p className="error-text">{error}</p>}
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-block"
+                                >
+                                    Unlock
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
