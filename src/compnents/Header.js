@@ -34,7 +34,7 @@ function Header() {
         <header>
             <div className="container header-inner">
                 <div className="logo">
-                    {/* Using the new transparent PNG logo from the logos folder */}
+                    {/* Using the latest updated transparent PNG logo from the logos folder */}
                     <img 
                         src="/images/logos/suncon-logo.png" 
                         alt="SunCon Investments & Development Ltd Logo" 
