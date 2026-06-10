@@ -34,30 +34,57 @@ function Header() {
         <header>
             <div className="container header-inner">
                 <div className="logo">
+                    {/* 
+                      NEW LOGO: Upload the SG logo image you shared (the blue stylized 'SG' with buildings)
+                      to the repo's public/ folder and name it suncon-logo.png (or .webp).
+                      Then uncomment the img tag below and remove or comment the .logo-icon div.
+                      The CSS now supports .logo img with gold-friendly styling.
+                    */}
+                    {/* <img src="/suncon-logo.png" alt="SunCon Investments & Development Ltd Logo" /> */}
+                    
                     <div className="logo-icon">
-                        <i className="fas fa-home"></i>
+                        <i className="fas fa-building"></i>
                     </div>
-                    <h1 className="logo-text">Suncon</h1>
+                    <div>
+                        <h1 className="logo-text">SUNCON</h1>
+                        <p style={{ 
+                            fontSize: '0.65rem', 
+                            color: 'var(--gold)', 
+                            margin: 0, 
+                            lineHeight: 1, 
+                            letterSpacing: '1.2px',
+                            opacity: 0.9 
+                        }}>
+                            INVESTMENTS & DEVELOPMENT LTD
+                        </p>
+                    </div>
                 </div>
+                
                 <nav className="desktop-nav">
                     <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
                     <a href="#projects" className="nav-link" onClick={(e) => handleNavClick(e, '#projects')}>Projects</a>
                     <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, '#about')}>About Us</a>
                     <a href="#news" className="nav-link" onClick={(e) => handleNavClick(e, '#news')}>News</a>
                     <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a>
-                    <a href="#members" className="nav-link" onClick={handleMembersClick}>{isLoggedIn ? 'Members ✓' : 'Members'}</a>
+                    <a href="#members" className="nav-link" onClick={handleMembersClick}>
+                        {isLoggedIn ? 'Members ✓' : 'Members'}
+                    </a>
                 </nav>
+                
                 <button onClick={handleMobileMenuToggle} className="mobile-menu-btn">
                     <i className="fas fa-bars"></i>
                 </button>
             </div>
+            
             <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
                 <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
                 <a href="#projects" className="nav-link" onClick={(e) => handleNavClick(e, '#projects')}>Projects</a>
                 <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, '#about')}>About Us</a>
                 <a href="#news" className="nav-link" onClick={(e) => handleNavClick(e, '#news')}>News</a>
                 <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a>
-                <a href="#members" className="nav-link" onClick={handleMembersClick}>{isLoggedIn ? 'Members ✓' : 'Members'}</a>
+                <a href="#members" className="nav-link" onClick={handleMembersClick}>
+                    {isLoggedIn ? 'Members ✓' : 'Members'}
+                </a>
             </div>
         </header>
     );
