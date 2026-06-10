@@ -34,26 +34,26 @@ function Header() {
         <header>
             <div className="container header-inner">
                 <div className="logo">
-                    {/* 
-                      NEW LOGO: Upload the SG logo image you shared (the blue stylized 'SG' with buildings)
-                      to the repo's public/ folder and name it suncon-logo.png (or .webp).
-                      Then uncomment the img tag below and remove or comment the .logo-icon div.
-                      The CSS now supports .logo img with gold-friendly styling.
-                    */}
-                    {/* <img src="/suncon-logo.png" alt="SunCon Investments & Development Ltd Logo" /> */}
+                    {/* Using the new SVG logo - clean, scalable, and matches the Design System perfectly */}
+                    <img 
+                        src="/suncon-logo.svg" 
+                        alt="SunCon Investments & Development Ltd Logo" 
+                        style={{ 
+                            height: '48px', 
+                            width: '48px', 
+                            filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.35))' 
+                        }} 
+                    />
                     
-                    <div className="logo-icon">
-                        <i className="fas fa-building"></i>
-                    </div>
-                    <div>
+                    <div style={{ marginLeft: '0.35rem' }}>
                         <h1 className="logo-text">SUNCON</h1>
                         <p style={{ 
-                            fontSize: '0.65rem', 
+                            fontSize: '0.62rem', 
                             color: 'var(--gold)', 
                             margin: 0, 
                             lineHeight: 1, 
-                            letterSpacing: '1.2px',
-                            opacity: 0.9 
+                            letterSpacing: '1.3px',
+                            opacity: 0.92 
                         }}>
                             INVESTMENTS & DEVELOPMENT LTD
                         </p>
