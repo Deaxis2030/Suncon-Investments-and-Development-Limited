@@ -14,12 +14,15 @@ function HeroSection() {
     };
 
     return (
-        <section className="building-background">
+        <section className="building-background" id="home">
             <div className="container hero-content">
                 <div>
-                    <h1 className="hero-title">Building Dreams, Creating Homes</h1>
+                    <div className="company-name" style={{ marginBottom: '0.5rem', opacity: 0.9 }}>
+                        SUNCON INVESTMENTS & DEVELOPMENT LTD
+                    </div>
+                    <h1 className="hero-title">Building Dreams,<br />Creating Legacy</h1>
                     <p className="hero-subtitle">
-                        Suncon transforms visions into reality with premium housing solutions that stand the test of time.
+                        Premium real estate development and construction with integrity, excellence, and a deep responsibility toward the communities we serve.
                     </p>
                     <div className="hero-actions">
                         <a
@@ -27,14 +30,14 @@ function HeroSection() {
                             onClick={(e) => handleCTAClick(e, '#projects')}
                             className="btn btn-primary"
                         >
-                            Our Projects
+                            Explore Our Projects
                         </a>
                         <a
                             href="#contact"
                             onClick={(e) => handleCTAClick(e, '#contact')}
                             className="btn btn-secondary"
                         >
-                            Get in Touch
+                            Partner With Us
                         </a>
                     </div>
                 </div>
