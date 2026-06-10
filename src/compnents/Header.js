@@ -64,6 +64,7 @@ function Header() {
                     <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
                     <a href="#projects" className="nav-link" onClick={(e) => handleNavClick(e, '#projects')}>Projects</a>
                     <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, '#about')}>About Us</a>
+                    <a href="#leadership" className="nav-link" onClick={(e) => handleNavClick(e, '#leadership')}>Leadership</a>
                     <a href="#news" className="nav-link" onClick={(e) => handleNavClick(e, '#news')}>News</a>
                     <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a>
                     <a href="#members" className="nav-link" onClick={handleMembersClick}>
@@ -80,6 +81,7 @@ function Header() {
                 <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
                 <a href="#projects" className="nav-link" onClick={(e) => handleNavClick(e, '#projects')}>Projects</a>
                 <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, '#about')}>About Us</a>
+                <a href="#leadership" className="nav-link" onClick={(e) => handleNavClick(e, '#leadership')}>Leadership</a>
                 <a href="#news" className="nav-link" onClick={(e) => handleNavClick(e, '#news')}>News</a>
                 <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>Contact</a>
                 <a href="#members" className="nav-link" onClick={handleMembersClick}>
