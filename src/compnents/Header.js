@@ -13,7 +13,6 @@ function Header() {
 
     const handleNavClick = (e, targetId) => {
         e.preventDefault();
-        console.log(`Navigating to ${targetId}`);
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             window.scrollTo({

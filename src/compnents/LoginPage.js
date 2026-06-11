@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { login, closeLoginModal } from '../store';
+import { closeLoginModal } from '../store';
 
 function LoginPage() {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [doorState, setDoorState] = useState(''); // '' | 'door-open' | 'door-close'
-    const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
 
     // Allow closing with Escape key
     useEffect(() => {
@@ -15,7 +15,9 @@ function LoginPage() {
             if (e.key === 'Escape') {
                 dispatch(closeLoginModal());
                 setDoorState('');
-                setError('');
+                setMessage('');
+                setEmail('');
+                setPassword('');
             }
         };
         window.addEventListener('keydown', handleEscape);
@@ -24,27 +26,21 @@ function LoginPage() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log('Dispatching login action');
-        if (email && password) {
-            setDoorState('door-open');
-            setTimeout(() => {
-                dispatch(login());
-                dispatch(closeLoginModal());
-            }, 1500); // Match animation duration
-        } else {
-            setError('Please enter both email and password');
-            setDoorState('door-close');
-            setTimeout(() => {
-                setDoorState('');
-                setError('');
-            }, 1500);
-        }
+        // Decorative only — member portal is non-functional for now
+        setMessage('Member portal is currently unavailable. We are performing maintenance and will notify you when it reopens.');
+        setDoorState('door-close');
+        // Do not dispatch login() — keep it decorative
+        setTimeout(() => {
+            setDoorState('');
+        }, 1500);
     };
 
     const closeModal = () => {
         dispatch(closeLoginModal());
         setDoorState('');
-        setError('');
+        setMessage('');
+        setEmail('');
+        setPassword('');
     };
 
     return (
@@ -109,7 +105,7 @@ function LoginPage() {
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </div>
-                                {error && <p className="error-text">{error}</p>}
+                                {message && <p className="error-text" style={{ color: 'var(--gold)', marginBottom: '1rem' }}>{message}</p>}
                                 <button
                                     type="submit"
                                     className="btn btn-primary btn-block"

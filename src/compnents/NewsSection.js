@@ -1,7 +1,6 @@
 import React from 'react';
 
 function NewsSection() {
-    console.log('Rendering NewsSection');
     return (
         <section id="news">
             <div className="section-header">

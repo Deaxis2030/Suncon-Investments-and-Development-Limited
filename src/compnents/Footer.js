@@ -3,7 +3,6 @@ import React from 'react';
 function Footer() {
     const handleNavClick = (e, targetId) => {
         e.preventDefault();
-        console.log(`Navigating to ${targetId}`);
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             window.scrollTo({
@@ -34,14 +33,14 @@ function Footer() {
                     <div>
                         <h3 className="footer-title">Connect</h3>
                         <div className="social-links">
-                            <a href="#"><i className="fab fa-facebook"></i></a>
-                            <a href="#"><i className="fab fa-twitter"></i></a>
-                            <a href="#"><i className="fab fa-instagram"></i></a>
+                            <button type="button" aria-label="Facebook" className="social-icon"><i className="fab fa-facebook"></i></button>
+                            <button type="button" aria-label="Twitter" className="social-icon"><i className="fab fa-twitter"></i></button>
+                            <button type="button" aria-label="Instagram" className="social-icon"><i className="fab fa-instagram"></i></button>
                         </div>
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>© 2025 Suncon. All rights reserved.</p>
+                    <p>© 2026 Suncon. All rights reserved.</p>
                 </div>
             </div>
         </footer>

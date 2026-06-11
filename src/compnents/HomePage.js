@@ -8,7 +8,6 @@ import NewsSection from './NewsSection';
 import ContactSection from './ContactSection';
 
 function HomePage() {
-    console.log('Rendering HomePage');
     return (
         <div id="home-page" className="container">
             <HeroSection />

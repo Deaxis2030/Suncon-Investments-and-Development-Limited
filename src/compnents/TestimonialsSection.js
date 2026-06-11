@@ -1,7 +1,6 @@
 import React from 'react';
 
 function TestimonialsSection() {
-    console.log('Rendering TestimonialsSection');
     return (
         <section id="testimonials">
             <div className="section-header">

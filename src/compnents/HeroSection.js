@@ -3,7 +3,6 @@ import React from 'react';
 function HeroSection() {
     const handleCTAClick = (e, targetId) => {
         e.preventDefault();
-        console.log(`Navigating to ${targetId}`);
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             window.scrollTo({
