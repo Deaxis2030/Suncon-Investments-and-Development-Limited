@@ -10,8 +10,8 @@ function ProjectsSection() {
             <div className="card-grid">
                 <div className="property-card card">
                     <div className="project-image-placeholder"></div>
-                    <h3 className="text-xl font-bold text-blue-800 mb-2">Sunset Villas</h3>
-                    <p className="text-gray-600">Luxury villas with scenic views and eco-friendly designs.</p>
+                    <h3 className="text-xl font-bold text-blue-800 mb-2">Skyline Apartments</h3>
+                    <p className="text-gray-600">Modern, affordable apartments featuring quality finishes and convenient urban living.</p>
                 </div>
                 <div className="property-card card">
                     <div className="project-image-placeholder"></div>
